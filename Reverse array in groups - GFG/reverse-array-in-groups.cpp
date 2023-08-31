@@ -11,44 +11,20 @@ using namespace std;
 class Solution{
 public:
     //Function to reverse every sub-array group of size k.
-    // void reverse(vector<long long> & arr, int i, int j) // reverse function.
-    // {
-    //     while(i < j)
-    //     {
-    //         int temp = arr[i];
-    //         arr[i] = arr[j];
-    //         arr[j] = temp;
-    //     }
-    // }
-    
     void reverseInGroups(vector<long long>& arr, int n, int k){
-    //     for(int i = 0; i < n; i+=k)
         
-    //      {
-    //     //     int j;
-    //     //     if(i+k-1 < n)
-    //     //     {
-    //     //         j = i+k-1;
-    //     //     }
-    //     //     else
-    //     //     {
-    //     //         j = n-1;   
-    //     //     }
-    //     int j = (i+k-1 < n? i+k-1 : n-1);
-    //         reverse(arr,i,j);
-    // }
-    
-    
-        for(int i = 0; i<n; i=i+k)
+        for(int i = 0; i < n; i+=k)
         {
             int start = i;
             int end = min(i+k-1, n-1);
+            
             while(start < end)
             {
                 int temp = arr[start];
                 arr[start] = arr[end];
                 arr[end] = temp;
-                start++; 
+                
+                start++;
                 end--;
             }
         }
